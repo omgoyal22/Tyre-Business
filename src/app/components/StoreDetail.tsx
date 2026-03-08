@@ -1,5 +1,5 @@
 import { Link, useParams, useNavigate } from "react-router";
-import { ArrowLeft, MapPin, Phone } from "lucide-react";
+import { ArrowLeft, MapPin, Phone, FileText } from "lucide-react";
 import { ImageWithFallback } from "./figma/ImageWithFallback";
 import { stores } from "../data/stores";
 
@@ -84,6 +84,13 @@ export function StoreDetail() {
           <h2 className="text-3xl font-bold mb-8">Location & Contact</h2>
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
             <div className="space-y-4">
+              <div className="flex items-start gap-3">
+                <FileText className="size-6 text-orange-500 flex-shrink-0 mt-1" />
+                <div>
+                  <h3 className="font-semibold mb-1">GSTIN</h3>
+                  <p className="text-zinc-300 font-mono">{store.gst}</p>
+                </div>
+              </div>
               <div className="flex items-start gap-3">
                 <MapPin className="size-6 text-orange-500 flex-shrink-0 mt-1" />
                 <div>

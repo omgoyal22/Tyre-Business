@@ -53,7 +53,7 @@ export function Contact() {
     {
       icon: Phone,
       title: "Phone",
-      details: "(555) 123-4567",
+      details: "9612154551",
       subdetails: "Mon-Fri 8am-6pm, Sat 9am-4pm",
     },
     {
@@ -65,8 +65,8 @@ export function Contact() {
     {
       icon: MapPin,
       title: "Location",
-      details: "123 Tyre Street",
-      subdetails: "City, State 12345",
+      details: "I Vikheshe Sumi Road, Dimapur",
+      subdetails: "Nagaland - 797112",
     },
   ];
 
@@ -153,7 +153,7 @@ export function Contact() {
                         value={formData.phone}
                         onChange={handleChange}
                         className="bg-zinc-800 border-zinc-700 text-white"
-                        placeholder="(555) 123-4567"
+                        placeholder="9612154551"
                       />
                     </div>
 
@@ -212,36 +212,11 @@ export function Contact() {
               <MapPin className="size-16 text-orange-500 mx-auto mb-4" />
               <h3 className="text-2xl font-bold mb-2">Visit Our Store</h3>
               <p className="text-zinc-400">
-                123 Tyre Street, City, State 12345
+                I Vikheshe Sumi Road, Dimapur, Nagaland - 797112
               </p>
               <p className="text-sm text-zinc-500 mt-2">
                 Map integration would go here
               </p>
-            </div>
-          </div>
-        </div>
-
-        {/* Business Hours */}
-        <div className="mt-12 max-w-3xl mx-auto">
-          <div className="bg-gradient-to-br from-zinc-800/50 to-zinc-900/50 rounded-2xl border border-zinc-700 p-8">
-            <h3 className="text-2xl font-bold mb-6 text-center">Business Hours</h3>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-              <div className="flex justify-between py-3 border-b border-zinc-700">
-                <span className="text-zinc-400">Monday - Friday</span>
-                <span className="font-semibold">8:00 AM - 6:00 PM</span>
-              </div>
-              <div className="flex justify-between py-3 border-b border-zinc-700">
-                <span className="text-zinc-400">Saturday</span>
-                <span className="font-semibold">9:00 AM - 4:00 PM</span>
-              </div>
-              <div className="flex justify-between py-3 border-b border-zinc-700">
-                <span className="text-zinc-400">Sunday</span>
-                <span className="font-semibold text-red-500">Closed</span>
-              </div>
-              <div className="flex justify-between py-3 border-b border-zinc-700">
-                <span className="text-zinc-400">Holidays</span>
-                <span className="font-semibold text-red-500">Closed</span>
-              </div>
             </div>
           </div>
         </div>

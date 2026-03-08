@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { X, CheckCircle } from "lucide-react";
+import { CheckCircle } from "lucide-react";
 import { Button } from "./ui/button";
 import { Input } from "./ui/input";
 import { Label } from "./ui/label";
@@ -44,34 +44,19 @@ export function TyreInquiryForm({ tyre, isOpen, onClose }: TyreInquiryFormProps)
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    
-    // Store inquiry in session storage
-    const inquiries = JSON.parse(sessionStorage.getItem('tyreInquiries') || '[]');
+    const inquiries = JSON.parse(sessionStorage.getItem("tyreInquiries") || "[]");
     const newInquiry = {
       ...formData,
-      tyre: {
-        brand: tyre.brand,
-        model: tyre.model,
-        size: tyre.size,
-        price: tyre.price,
-      },
+      tyre: { brand: tyre.brand, model: tyre.model, size: tyre.size, price: tyre.price },
       timestamp: new Date().toISOString(),
     };
     inquiries.push(newInquiry);
-    sessionStorage.setItem('tyreInquiries', JSON.stringify(inquiries));
-
+    sessionStorage.setItem("tyreInquiries", JSON.stringify(inquiries));
     setIsSubmitted(true);
     setTimeout(() => {
       setIsSubmitted(false);
       onClose();
-      setFormData({
-        name: "",
-        email: "",
-        phone: "",
-        quantity: "4",
-        vehicleModel: "",
-        message: "",
-      });
+      setFormData({ name: "", email: "", phone: "", quantity: "4", vehicleModel: "", message: "" });
     }, 2000);
   };
 
@@ -137,7 +122,7 @@ export function TyreInquiryForm({ tyre, isOpen, onClose }: TyreInquiryFormProps)
                     onChange={handleChange}
                     required
                     className="bg-zinc-800 border-zinc-700 text-white"
-                    placeholder="(555) 123-4567"
+                    placeholder="9612154551"
                   />
                 </div>
 

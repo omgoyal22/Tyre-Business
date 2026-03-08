@@ -1,5 +1,5 @@
 import { Link } from "react-router";
-import { Users, Target, TrendingUp, Heart, MapPin, ArrowRight } from "lucide-react";
+import { Users, Target, TrendingUp, Heart, MapPin, ArrowRight, Phone } from "lucide-react";
 import { ImageWithFallback } from "./figma/ImageWithFallback";
 import { stores } from "../data/stores";
 
@@ -84,7 +84,12 @@ export function About() {
                 </div>
                 <div className="p-4">
                   <p className="text-zinc-400 text-sm line-clamp-2">{store.shortDescription}</p>
+                  <p className="text-zinc-500 text-xs font-mono mt-2">GST: {store.gst}</p>
                   <div className="flex items-center gap-2 mt-2 text-orange-500 text-sm font-medium">
+                    <Phone className="size-4 flex-shrink-0" />
+                    <span>{store.phone}</span>
+                  </div>
+                  <div className="flex items-center gap-2 mt-1 text-zinc-500 text-sm">
                     <MapPin className="size-4 flex-shrink-0" />
                     <span>{store.city}, {store.state}</span>
                   </div>
@@ -174,33 +179,6 @@ export function About() {
                 </div>
               );
             })}
-          </div>
-        </div>
-      </section>
-
-      {/* Team Section */}
-      <section className="py-16">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-4xl font-bold mb-4">Expert Team</h2>
-            <p className="text-xl text-zinc-400 max-w-2xl mx-auto">
-              Our certified technicians and advisors are here to help you find the perfect tyres
-            </p>
-          </div>
-
-          <div className="relative h-[500px] rounded-2xl overflow-hidden">
-            <ImageWithFallback
-              src="https://images.unsplash.com/photo-1770656505713-b0fd2f5751e6?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxwcm9mZXNzaW9uYWwlMjBtZWNoYW5pYyUyMHNlcnZpY2V8ZW58MXx8fHwxNzcwODc1MDg5fDA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral"
-              alt="Professional team"
-              className="w-full h-full object-cover"
-            />
-            <div className="absolute inset-0 bg-gradient-to-t from-zinc-950 via-transparent to-transparent" />
-            <div className="absolute bottom-0 left-0 right-0 p-8 text-center">
-              <h3 className="text-2xl font-bold mb-2">Certified Professionals</h3>
-              <p className="text-zinc-300 max-w-2xl mx-auto">
-                With decades of combined experience, our team is dedicated to providing expert advice and exceptional service
-              </p>
-            </div>
           </div>
         </div>
       </section>

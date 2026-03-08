@@ -125,9 +125,9 @@ export function Layout() {
             <div>
               <h3 className="font-semibold mb-4">Contact</h3>
               <ul className="space-y-2 text-zinc-400">
-                <li>123 Tyre Street</li>
-                <li>City, State 12345</li>
-                <li>Phone: (555) 123-4567</li>
+                <li>I Vikheshe Sumi Road, Dimapur</li>
+                <li>Nagaland - 797112</li>
+                <li>Phone: 9612154551</li>
                 <li>Email: info@tyremax.com</li>
               </ul>
             </div>

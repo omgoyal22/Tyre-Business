@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { Search, Filter, Star } from "lucide-react";
 import { ImageWithFallback } from "./figma/ImageWithFallback";
-import { TyreInquiryForm, Tyre } from "./TyreInquiryForm";
+import { Tyre } from "./TyreInquiryForm";
 import { Input } from "./ui/input";
 import { Button } from "./ui/button";
 import {
@@ -11,6 +11,13 @@ import {
   SelectTrigger,
   SelectValue,
 } from "./ui/select";
+
+import download2Img from "../../assets/collection/download-2.jpg";
+import oip1Img from "../../assets/collection/oip-1.jpg";
+import oip2Img from "../../assets/collection/oip-2.jpg";
+import oip3Img from "../../assets/collection/oip-3.jpg";
+import oipImg from "../../assets/collection/oip.jpg";
+import tyre3Img from "../../assets/collection/tyre3.jpg";
 
 const tyres: Tyre[] = [
   {
@@ -23,7 +30,7 @@ const tyres: Tyre[] = [
     season: "Summer",
     speedRating: "Y",
     loadIndex: "94",
-    image: "https://images.unsplash.com/photo-1562671798-f6695f7c146f?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxwcmVtaXVtJTIwY2FyJTIwdGlyZXMlMjBkaXNwbGF5fGVufDF8fHx8MTc3MDg3NTA4Nnww&ixlib=rb-4.1.0&q=80&w=1080",
+    image: download2Img,
   },
   {
     id: "2",
@@ -35,7 +42,7 @@ const tyres: Tyre[] = [
     season: "Winter",
     speedRating: "H",
     loadIndex: "91",
-    image: "https://images.unsplash.com/photo-1755398311235-7efdef896a9d?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxzcG9ydHMlMjBjYXIlMjB3aGVlbHN8ZW58MXx8fHwxNzcwODc1MDg3fDA&ixlib=rb-4.1.0&q=80&w=1080",
+    image: oip1Img,
   },
   {
     id: "3",
@@ -47,7 +54,7 @@ const tyres: Tyre[] = [
     season: "All-Season",
     speedRating: "V",
     loadIndex: "95",
-    image: "https://images.unsplash.com/photo-1562671798-f6695f7c146f?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxwcmVtaXVtJTIwY2FyJTIwdGlyZXMlMjBkaXNwbGF5fGVufDF8fHx8MTc3MDg3NTA4Nnww&ixlib=rb-4.1.0&q=80&w=1080",
+    image: oip2Img,
   },
   {
     id: "4",
@@ -59,7 +66,7 @@ const tyres: Tyre[] = [
     season: "Summer",
     speedRating: "Y",
     loadIndex: "97",
-    image: "https://images.unsplash.com/photo-1755398311235-7efdef896a9d?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxzcG9ydHMlMjBjYXIlMjB3aGVlbHN8ZW58MXx8fHwxNzcwODc1MDg3fDA&ixlib=rb-4.1.0&q=80&w=1080",
+    image: oip3Img,
   },
   {
     id: "5",
@@ -71,7 +78,7 @@ const tyres: Tyre[] = [
     season: "Summer",
     speedRating: "W",
     loadIndex: "94",
-    image: "https://images.unsplash.com/photo-1562671798-f6695f7c146f?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxwcmVtaXVtJTIwY2FyJTIwdGlyZXMlMjBkaXNwbGF5fGVufDF8fHx8MTc3MDg3NTA4Nnww&ixlib=rb-4.1.0&q=80&w=1080",
+    image: oipImg,
   },
   {
     id: "6",
@@ -83,7 +90,7 @@ const tyres: Tyre[] = [
     season: "Summer",
     speedRating: "Y",
     loadIndex: "94",
-    image: "https://images.unsplash.com/photo-1755398311235-7efdef896a9d?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxzcG9ydHMlMjBjYXIlMjB3aGVlbHN8ZW58MXx8fHwxNzcwODc1MDg3fDA&ixlib=rb-4.1.0&q=80&w=1080",
+    image: tyre3Img,
   },
   {
     id: "7",
@@ -95,7 +102,7 @@ const tyres: Tyre[] = [
     season: "Summer",
     speedRating: "Y",
     loadIndex: "95",
-    image: "https://images.unsplash.com/photo-1562671798-f6695f7c146f?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxwcmVtaXVtJTIwY2FyJTIwdGlyZXMlMjBkaXNwbGF5fGVufDF8fHx8MTc3MDg3NTA4Nnww&ixlib=rb-4.1.0&q=80&w=1080",
+    image: download2Img,
   },
   {
     id: "8",
@@ -107,7 +114,7 @@ const tyres: Tyre[] = [
     season: "All-Season",
     speedRating: "H",
     loadIndex: "91",
-    image: "https://images.unsplash.com/photo-1755398311235-7efdef896a9d?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxzcG9ydHMlMjBjYXIlMjB3aGVlbHN8ZW58MXx8fHwxNzcwODc1MDg3fDA&ixlib=rb-4.1.0&q=80&w=1080",
+    image: oip1Img,
   },
   {
     id: "9",
@@ -119,7 +126,7 @@ const tyres: Tyre[] = [
     season: "All-Season",
     speedRating: "V",
     loadIndex: "94",
-    image: "https://images.unsplash.com/photo-1562671798-f6695f7c146f?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxwcmVtaXVtJTIwY2FyJTIwdGlyZXMlMjBkaXNwbGF5fGVufDF8fHx8MTc3MDg3NTA4Nnww&ixlib=rb-4.1.0&q=80&w=1080",
+    image: oip2Img,
   },
   {
     id: "10",
@@ -131,7 +138,7 @@ const tyres: Tyre[] = [
     season: "Summer",
     speedRating: "W",
     loadIndex: "94",
-    image: "https://images.unsplash.com/photo-1755398311235-7efdef896a9d?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxzcG9ydHMlMjBjYXIlMjB3aGVlbHN8ZW58MXx8fHwxNzcwODc1MDg3fDA&ixlib=rb-4.1.0&q=80&w=1080",
+    image: oip3Img,
   },
   {
     id: "11",
@@ -143,7 +150,7 @@ const tyres: Tyre[] = [
     season: "Winter",
     speedRating: "H",
     loadIndex: "92",
-    image: "https://images.unsplash.com/photo-1562671798-f6695f7c146f?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxwcmVtaXVtJTIwY2FyJTIwdGlyZXMlMjBkaXNwbGF5fGVufDF8fHx8MTc3MDg3NTA4Nnww&ixlib=rb-4.1.0&q=80&w=1080",
+    image: oipImg,
   },
   {
     id: "12",
@@ -155,7 +162,7 @@ const tyres: Tyre[] = [
     season: "All-Season",
     speedRating: "W",
     loadIndex: "94",
-    image: "https://images.unsplash.com/photo-1755398311235-7efdef896a9d?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxzcG9ydHMlMjBjYXIlMjB3aGVlbHN8ZW58MXx8fHwxNzcwODc1MDg3fDA&ixlib=rb-4.1.0&q=80&w=1080",
+    image: tyre3Img,
   },
 ];
 
@@ -163,8 +170,9 @@ export function Collection() {
   const [searchQuery, setSearchQuery] = useState("");
   const [selectedSeason, setSelectedSeason] = useState<string>("all");
   const [selectedType, setSelectedType] = useState<string>("all");
-  const [selectedTyre, setSelectedTyre] = useState<Tyre | null>(null);
-  const [isFormOpen, setIsFormOpen] = useState(false);
+  const maxCardsToShow = 8;
+
+  const googleFormUrl = "https://docs.google.com/forms/d/e/1FAIpQLSd8X0pODh4kk-OgVHF_kfYOmKbj9XsXrK1yHPpHuv1QCIcxtg/viewform?usp=publish-editor";
 
   const filteredTyres = tyres.filter((tyre) => {
     const matchesSearch =
@@ -180,9 +188,12 @@ export function Collection() {
     return matchesSearch && matchesSeason && matchesType;
   });
 
-  const handleInquire = (tyre: Tyre) => {
-    setSelectedTyre(tyre);
-    setIsFormOpen(true);
+  const displayedTyres = filteredTyres.slice(0, maxCardsToShow);
+
+  const handleInquire = (_tyre: Tyre) => {
+    if (googleFormUrl) {
+      window.open(googleFormUrl, "_blank", "noopener,noreferrer");
+    }
   };
 
   return (
@@ -243,14 +254,14 @@ export function Collection() {
           <div className="mt-4 flex items-center gap-2 text-sm text-zinc-400">
             <Filter className="size-4" />
             <span>
-              Showing {filteredTyres.length} of {tyres.length} tyres
+              Showing {displayedTyres.length} of {filteredTyres.length} tyres
             </span>
           </div>
         </div>
 
         {/* Tyres Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {filteredTyres.map((tyre) => (
+          {displayedTyres.map((tyre) => (
             <div
               key={tyre.id}
               className="group bg-gradient-to-br from-zinc-800/50 to-zinc-900/50 rounded-2xl border border-zinc-700 overflow-hidden hover:border-orange-500/50 transition-all duration-300 hover:transform hover:scale-105"
@@ -313,6 +324,8 @@ export function Collection() {
                   </div>
                   <Button
                     onClick={() => handleInquire(tyre)}
+                    disabled={!googleFormUrl}
+                    title={!googleFormUrl ? "Add VITE_GOOGLE_FORM_URL to .env" : "Open inquiry form"}
                     className="bg-gradient-to-r from-orange-500 to-red-500 hover:shadow-lg hover:shadow-orange-500/50"
                   >
                     Inquire
@@ -332,18 +345,6 @@ export function Collection() {
           </div>
         )}
       </div>
-
-      {/* Inquiry Form Dialog */}
-      {selectedTyre && (
-        <TyreInquiryForm
-          tyre={selectedTyre}
-          isOpen={isFormOpen}
-          onClose={() => {
-            setIsFormOpen(false);
-            setSelectedTyre(null);
-          }}
-        />
-      )}
     </div>
   );
 }
