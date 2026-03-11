@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Mail, Phone, MapPin, Send, CheckCircle } from "lucide-react";
+import { Mail, Phone, MapPin, Send, CheckCircle, CreditCard } from "lucide-react";
 import { Button } from "./ui/button";
 import { Input } from "./ui/input";
 import { Label } from "./ui/label";
@@ -101,6 +101,32 @@ export function Contact() {
               </div>
             );
           })}
+        </div>
+
+        {/* Payment / Bank Details */}
+        <div className="mb-16">
+          <div className="bg-gradient-to-br from-zinc-800/50 to-zinc-900/50 rounded-2xl border border-zinc-700 p-8">
+            <div className="flex items-center gap-3 mb-6">
+              <div className="inline-flex p-3 bg-gradient-to-br from-orange-500 to-red-500 rounded-xl">
+                <CreditCard className="size-6" />
+              </div>
+              <h2 className="text-2xl font-bold">Bank Details</h2>
+            </div>
+            <div className="space-y-3">
+              <div className="flex justify-between items-center py-3 border-b border-zinc-700">
+                <span className="text-zinc-400">Account Name</span>
+                <span className="font-semibold">New Gold Star Tyres</span>
+              </div>
+              <div className="flex justify-between items-center py-3 border-b border-zinc-700">
+                <span className="text-zinc-400">Account Number</span>
+                <span className="font-semibold font-mono">5496119027</span>
+              </div>
+              <div className="flex justify-between items-center py-3">
+                <span className="text-zinc-400">IFSC Code</span>
+                <span className="font-semibold font-mono">CBIN0282589</span>
+              </div>
+            </div>
+          </div>
         </div>
 
         {/* Contact Form */}
